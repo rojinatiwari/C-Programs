@@ -1,3 +1,4 @@
+// No return type and without argument
 #include<iostream>
 using namespace std;
 class circle
@@ -22,5 +23,4 @@ int main()
     return 0;
 }
 
-   
-    
+  
