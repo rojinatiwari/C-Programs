@@ -1,39 +1,40 @@
 #include <iostream>
-
 using namespace std;
-class EMP
-{
+
+class EMP {
     private:
     char name[100];
-    int id,cont;
+    int e_id;
+    string contact;  // Changed contact to string to accommodate numbers with '+'
 
     public:
-    void input ()
-   {
-    cout<<"Enter the emp name,id and contact no";
-    cin >>name>>id>>cont;
-   } 
+    void input() {
+        cout << "\nEnter emp-id: ";
+        cin >> e_id;
+        cin.ignore();  // Ignore newline character left in the buffer by previous input
+        cout << "Enter the employee's name: ";
+        cin.getline(name, 100);
+        cout << "Enter contact no: +977";
+        cin >> contact;
+    } 
 
-
-   void display()
-   {
-    cout<<name<< ","<<id<< ","<<cont;
-   }
+    void display() {
+        cout << e_id << "\t" << name << "\t+977" << contact;
+    }
 };
 
-int main()
- {   
+int main() {   
     EMP e[5];
-    int i;
-    for ( i = 0; i <= 5; i++)
-    {
+    for (int i = 0; i < 5; i++) {
         e[i].input();
     }
-    for ( i = 0; i <= 5; i++)
-    {
+
+    cout << "\n e_id \t name \t  contact\n";
+
+    for (int i = 0; i < 5; i++) {
         e[i].display();
+        cout << endl;
     }
-    
-    
+
     return 0;
 }
