@@ -23,6 +23,6 @@ class checkprimecomposite
 };
 
 int main() {
-    checkprimecomposite o;
+    checkprimecomposite Obj;
     return 0;
 }
