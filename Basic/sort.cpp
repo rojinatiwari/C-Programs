@@ -43,6 +43,8 @@ class sort
     {
         cout<<a[i]<<endl;
     }
+    
+    }
 
     };
 

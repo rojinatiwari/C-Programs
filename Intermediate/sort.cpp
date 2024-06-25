@@ -3,11 +3,12 @@
 
 #include<iostream>
 using namespace std;
+template <class T>
 
 class sort
 {
     private:
-    int a[100],n,i,j,temp;
+    T a[100],n,i,j,temp;
 
     public:
     void input()
@@ -44,13 +45,15 @@ class sort
         cout<<a[i]<<endl;
     }
 
+    }
+
     };
 
 
 
  int main()
   {
-   sort s;
+   sort <int> s;
    s.input();
   s.calculate();
     return 0;   
