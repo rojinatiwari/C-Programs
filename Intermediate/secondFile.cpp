@@ -4,8 +4,10 @@ using namespace std;
 
 int main() {
     fstream file;
-    file.open("./file/first file.txt",ios::out);
-    file<<"HELLO , I AM EVELYN .";
+    file.open("first file.txt",ios::in);
+    string x;
+    while (getline(file , x))
+    cout<<x<<endl;
     file.close();
     return 0;
 }
