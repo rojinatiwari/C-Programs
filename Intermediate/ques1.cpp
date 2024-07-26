@@ -1,45 +1,34 @@
+//WAP to swap the variables of two classes using friend function
 #include <iostream>
- 
 using namespace std;
- 
-class Swap {
- 
-    // Declare the variables of Swap Class
-    int temp, a, b;
- 
-public:
- 
-    // Define the parameterized constructor, for inputs
-    Swap(int a, int b)
-    {
-        this->a = a;
-        this->b = b;
-    }
- 
-    // Declare the friend function to swap, take arguments 
-    // as call by reference
-    friend void swap(Swap&);
-};
- 
-// Define the swap function outside class scope
-void swap(Swap& s1)
+class Class2; //Forward declaration
+class Class1
 {
-    // Call by reference is used to passed object copy to
-    // the function
-    cout << "\nBefore Swapping: " << s1.a << " " << s1.b;
- 
-    // Swap operations with Swap Class variables
-    s1.temp = s1.a;
-    s1.a = s1.b;
-    s1.b = s1.temp;
-    cout << "\nAfter Swapping: " << s1.a << " " << s1.b;
+  private:
+    string data= "I am from Class1";
+  public:
+    friend void swapper(Class1 &, Class2 &);
+};
+class Class2
+{
+  private:
+string data= "I am from Class2";
+  public:
+    friend void swapper(Class1 &, Class2 &);
+};
+void swapper(Class1& obj1, Class2& obj2)
+{
+  string temp;
+  temp = obj1.data;
+  obj1.data = obj2.data;
+  obj2.data = temp;
+   cout << "Class 1 says: " << obj1.data << endl;
+  cout << "Class 2 says: " << obj2.data << endl;
 }
- 
-// Driver Code
+
 int main()
 {
-    // Declare and Initialize the Swap object
-    Swap s(4, 6);
-    swap(s);
-    return 0;
+  Class1 c1;
+  Class2 c2;
+  swapper(c1, c2);
 }
